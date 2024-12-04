@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="carneiro_graficos",
-    version="0.1.0",
+    version="0.2.0",
     author="Antonio Anerão",
     author_email="anerao.junior@gmail.com",
     description="Uma simples biblioteca para criar gráficos usando matplotlib",
@@ -17,6 +17,7 @@ setup(
     ],
     python_requires=">=3.6",
     install_requires=[
-        "matplotlib",  # Adiciona a dependência do matplotlib
+        "matplotlib",
+        "numpy"
     ],
 )
