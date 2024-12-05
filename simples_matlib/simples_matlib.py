@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-class CarneiroGraficos:
+class SimplesMatLib:
     def bar(self, data, bar_labels, bar_colors, loc="upper right", title="", ylabel="", xlabel=""):
         """
         Cria um gráfico de barras a partir de um dicionário de dados.
