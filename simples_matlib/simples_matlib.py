@@ -4,14 +4,25 @@ import numpy as np
 
 
 class SimplesMatLib:
-    def bar(self, data, bar_labels, bar_colors, loc="upper right", title="", ylabel="", xlabel=""):
+    def bar(
+        self,
+        data,
+        bar_labels,
+        bar_colors,
+        loc="upper right",
+        titulo="",
+        titulo_legend="",
+        ylabel="",
+        xlabel=""
+    ):
         """
         Cria um gráfico de barras a partir de um dicionário de dados.
         :param data: Dicionário com os dados a serem plotados.
         :param bar_labels: Rótulos das barras.
         :param bar_colors: Cores das barras.
         :param loc: Localização da legenda.
-        :param title: Título do gráfico.
+        :param titulo: Título do gráfico.
+        :param titulo_legend: Título da legenda.
         :param ylabel: Rótulo do eixo y.
         :param xlabel: Rótulo do eixo x.
         """
@@ -27,17 +38,17 @@ class SimplesMatLib:
             color=bar_colors
         )
         ax.bar_label(bar_container, fmt='{:,.0f}')
-        ax.legend(title="", loc=loc)
-        ax.set(title="Commits na Anton.IA", xlabel=xlabel, ylabel=xlabel)
+        ax.legend(title=titulo_legend, loc=loc)
+        ax.set(title=titulo, xlabel=xlabel, ylabel=xlabel)
         plt.show()
 
-    def pie(self, data, color="Blues", title="", title_size=12):
+    def pie(self, data, color="Blues", titulo="", titulo_fontsize=12):
         """
         Cria um gráfico de pizza a partir de um dicionário de dados.
         :param data: Dicionário com os dados a serem plotados.
         :param color: Cor do gráfico. Ex: "Blues", "Greens", "Reds", "Oranges".
-        :param title: Título do gráfico.
-        :param title_size: Tamanho do título.
+        :param titulo: Título do gráfico.
+        :param titulo_fontsize: Tamanho do título.
         """
         colors = plt.get_cmap(color)(np.linspace(0.2, 0.7, len(data)))
 
@@ -59,7 +70,7 @@ class SimplesMatLib:
             },
             frame=True
         )
-        ax.set_title(title, fontsize=title_size)
+        ax.set_title(titulo, fontsize=titulo_fontsize)
         ax.set(xlim=(0, 8), xticks=np.arange(1, 8), ylim=(0, 8), yticks=np.arange(1, 8))
         plt.show()
 

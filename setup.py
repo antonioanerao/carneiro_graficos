@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="simples_matlib",
-    version="0.2.0",
+    version="0.2.1",
     author="Antonio Anerão",
     author_email="anerao.junior@gmail.com",
     description="Uma simples biblioteca para criar gráficos usando matplotlib",
