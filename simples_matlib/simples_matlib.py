@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import matplotlib.ticker as mticker
 import numpy as np
 
 
@@ -60,4 +61,49 @@ class SimplesMatLib:
         )
         ax.set_title(title, fontsize=title_size)
         ax.set(xlim=(0, 8), xticks=np.arange(1, 8), ylim=(0, 8), yticks=np.arange(1, 8))
+        plt.show()
+
+    def stackplot(
+        self,
+        categorias,
+        data,
+        loc="upper right",
+        titulo='Stackplot',
+        eixo_x='Eixo X',
+        eixo_y='Eixo Y',
+        alpha=0.8,
+        tick_interval=5,
+        legend_fontsize=9.5,
+        titulo_fontsize=12,
+        eixo_x_fontsize=10,
+        eixo_y_fontsize=10
+    ):
+        """
+        Cria um gráfico de stackplot a partir de um dicionário de dados.
+        :param categorias: Categorias do gráfico.
+        :param data: Dicionário com os dados a serem plotados.
+        :param loc: Localização da legenda.
+        :param titulo: Título do gráfico.
+        :param eixo_x: Rótulo do eixo x.
+        :param eixo_y: Rótulo do eixo y.
+        :param alpha: Transparência das barras.
+        :param tick_interval: Intervalo dos ticks.
+        :param legend_fontsize: Tamanho da fonte da legenda.
+        :param titulo_fontsize: Tamanho da fonte do título.
+        :param eixo_x_fontsize: Tamanho da fonte do eixo x.
+        :param eixo_y_fontsize: Tamanho da fonte do eixo y.
+        """
+        fig, ax = plt.subplots()
+        ax.stackplot(
+            categorias,
+            data.values(),
+            labels=data.keys(),
+            alpha=alpha
+        )
+        ax.legend(loc=loc, reverse=False, fontsize=legend_fontsize)
+        ax.set_title(titulo, fontsize=titulo_fontsize)
+        ax.set_xlabel(eixo_x, fontsize=eixo_x_fontsize)
+        ax.set_ylabel(eixo_y, fontsize=eixo_y_fontsize)
+        ax.yaxis.set_minor_locator(mticker.MultipleLocator(tick_interval))
+
         plt.show()
