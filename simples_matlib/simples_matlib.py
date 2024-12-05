@@ -42,10 +42,11 @@ class SimplesMatLib:
         ax.set(title=titulo, xlabel=xlabel, ylabel=xlabel)
         plt.show()
 
-    def pie(self, data, color="Blues", titulo="", titulo_fontsize=12):
+    def pie(self, data, explode=[], color="Blues", titulo="", titulo_fontsize=12):
         """
         Cria um gráfico de pizza a partir de um dicionário de dados.
         :param data: Dicionário com os dados a serem plotados.
+        :param explode: Lista de valores para destacar as fatias.
         :param color: Cor do gráfico. Ex: "Blues", "Greens", "Reds", "Oranges".
         :param titulo: Título do gráfico.
         :param titulo_fontsize: Tamanho do título.
@@ -60,7 +61,7 @@ class SimplesMatLib:
             autopct='%1.1f%%',
             shadow={'ox': -0.07, 'edgecolor': 'none', 'shade': 0.9},
             startangle=90,
-            explode=(0.06, 0.06, 0.06, 0.3),
+            explode=explode,
             radius=3,
             center=(4, 4),
             textprops={'size': 'smaller'},
